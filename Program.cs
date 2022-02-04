@@ -1,42 +1,99 @@
 ﻿using System;
+using System.Collections.Generic;
 using GarysGarage;
 
 namespace graysGarage
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            Console.WriteLine("GARYS GARAGE!");
+            Zero fxs = new Zero();
+            Zero fx = new Zero();
+            Tesla modelS = new Tesla();
 
-            Zero Fisker = new Zero
-            {
-                MainColor = "Black"
+            List<IelectricVehicle> electricVehicles = new List<IelectricVehicle>() {
+                fx, fxs, modelS
             };
 
-            Tesla CyberTruck = new Tesla()
+            Console.WriteLine("Electric Vehicles");
+            foreach (IelectricVehicle ev in electricVehicles)
             {
-                MainColor = "Hunter Green"
+                Console.WriteLine($"{ev.CurrentChargePercentage}");
+            }
+
+            foreach (IelectricVehicle ev in electricVehicles)
+            {
+                // This should charge the vehicle to 100%
+                ev.ChargeBattery();
+
+
+            }
+
+            foreach (IelectricVehicle ev in electricVehicles)
+            {
+                Console.WriteLine($"{ev.CurrentChargePercentage}");
+            }
+
+            /***********************************************/
+
+            Ram ram = new Ram();
+            Cessna cessna150 = new Cessna();
+
+            List<IGasvehicle> gasVehicles = new List<IGasvehicle>() {
+                ram, cessna150
             };
 
-            Cessna BigPlane = new Cessna()
+            Console.WriteLine("Gas Vehicles");
+            foreach (IGasvehicle gv in gasVehicles)
             {
-                MainColor = "Orange"
-            };
+                Console.WriteLine($"{gv.CurrentTankPercentage}");
+            }
 
-        Ram TRX = new Ram()
-        {
-            MainColor = "Matte Silver"
-        };
+            foreach (IGasvehicle gv in gasVehicles)
+            {
+                // This should completely refuel the gas tank
+                gv.RefuelTank();
+            }
+
+            foreach (IGasvehicle gv in gasVehicles)
+            {
+                Console.WriteLine($"{gv.CurrentTankPercentage}");
+            }
+            //         {
+            //             Console.WriteLine("GARYS GARAGE!");
+
+            //             Zero Fisker = new Zero
+            //             {
+            //                 MainColor = "Black"
+            //             };
+
+            //             Tesla CyberTruck = new Tesla()
+            //             {
+            //                 MainColor = "Hunter Green"
+            //             };
+
+            //             Cessna BigPlane = new Cessna()
+            //             {
+            //                 MainColor = "Orange"
+            //             };
+
+            //         Ram TRX = new Ram()
+            //         {
+            //             MainColor = "Matte Silver"
+            //         };
 
 
-        Fisker.Drive();
-        CyberTruck.Drive();
-        BigPlane.Drive();
-        TRX.Drive();
+            //         Fisker.Drive();
+            //         CyberTruck.Drive();
+            //         BigPlane.Drive();
+            //         TRX.Drive();
 
-        TRX.Turn();
-        TRX.Stop();
+            //         TRX.Turn();
+            //         TRX.Stop();
+            //         }
         }
     }
 }
+

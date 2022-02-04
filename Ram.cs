@@ -4,14 +4,14 @@ using graysGarage;
 namespace GarysGarage {
 
 
-     public class Ram : Vehicle 
+     public class Ram : Vehicle, IGasvehicle
     {
         public double FuelCapacity { get; set; }
-        
+        public double CurrentTankPercentage { get; set; }
 
         public void RefuelTank()
         {
-
+            CurrentTankPercentage = 50;
         }
 
         public override void Drive()

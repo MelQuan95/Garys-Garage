@@ -2,13 +2,14 @@ using System;
 using graysGarage;
 
 namespace GarysGarage {
-    public class Tesla : Vehicle
+    public class Tesla : Vehicle, IelectricVehicle
     {
         public double BatteryKWh { get; set; }
+        public double CurrentChargePercentage { get; set; }
 
         public void ChargeBattery()
         {
-
+            CurrentChargePercentage = 98;
         }
 
         public override void Drive()
