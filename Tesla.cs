@@ -17,7 +17,7 @@ namespace GarysGarage {
             
         }
 
-         public override void Turn(string direction)
+         public override void Turn()
     {
         Console.WriteLine("Tesla went for a har left turn!!");
     }

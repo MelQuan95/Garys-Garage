@@ -14,7 +14,7 @@ namespace graysGarage
             Console.WriteLine("Car go Vroom!!");
         }
 
-         public virtual void Turn(string direction)
+         public virtual void Turn()
         {
             Console.WriteLine("turn left at the light");
         }

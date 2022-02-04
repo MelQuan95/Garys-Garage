@@ -35,7 +35,7 @@ namespace graysGarage
         BigPlane.Drive();
         TRX.Drive();
 
-        TRX.Turn("left");
+        TRX.Turn();
         TRX.Stop();
         }
     }
